@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Task web app</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif
+        }
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.8;
+        }
+
+        /* Full height image header */
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("https://wallpaperaccess.com/full/334700.jpg");
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<a href="/">home</a>
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+
+        <div class="w3-right w3-hide-small">
+
+            <a href="/" class="w3-bar-item w3-button">Home</a>
+         
+
+        </div>
+<br> 
+    </div>
+</div>
+
+
+<br><br>
+<div class="w3-center">
+
+
+
+
+<h1>Post a free Ad</h1>
+<form method="post">
+    <input name="name" placeholder="Name" required />
+    <br /><br />
+    <button type="submit">
+        Submit
+    </button>
+</form>
+</div>
+<h3 class="w3-center">Your Ads</h3>
+<div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+
+    <% for(var i=0; i < ads.length; i++) { %>
+
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-card">
+
+                <div class="w3-container">
+
+                    <%=i+1 %><br>
+                        <%=ads[i].name %>
+                            <br>
+                        <a href="/user/ad/<%=ads[i].id %>/chats">
+                            show chats
+                        </a>
+
+
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+</div>
+
+
+
+
+
+</body>
+
+</html>

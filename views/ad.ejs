@@ -1,0 +1,59 @@
+<header>
+    <% if(user) { %>
+
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-card" id="myNavbar">
+
+                <div class="w3-right w3-hide-small">
+
+                    <a href="/user/dashboard" class="w3-bar-item w3-button">Dashboard</a>
+                    <a href="/user/logout" class="w3-bar-item w3-button">Logout</a>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <% }else{ %>
+            <div class="w3-top">
+                <div class="w3-bar w3-white w3-card" id="myNavbar">
+
+                    <div class="w3-right w3-hide-small">
+                        <a href="/user/login" class="w3-bar-item w3-button">Login / Sign up</a>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <% } %>
+</header>
+<h1>
+    Ad Name: <%=ad.name %>
+</h1>
+
+<% if(user){ %>
+<h2>Chat</h2>
+
+
+<% for(var i=0; i < messages.length; i++){ %>
+<h4>
+    <% if(messages[i].from == 'user') { %>
+    You:
+    <% }else{ %>
+    Owner
+    <% } %>
+    <%=messages[i].message %>
+</h4>
+<% } %>
+
+<form method="post">
+    <input name="message" />
+    <button type="submit">send</button>
+</form>
+
+<% } %>
